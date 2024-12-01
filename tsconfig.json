@@ -1,0 +1,9 @@
+// type "com.." and then when the tooltip for auto complete shows up, press tab to auto fill it.
+
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2020"
+  },
+  "exclude": ["node_modules"]
+}
