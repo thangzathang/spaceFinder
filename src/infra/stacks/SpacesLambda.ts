@@ -8,7 +8,7 @@ import { Construct } from "constructs";
 import { join } from "path";
 
 interface SpacesLambdaStackProps extends StackProps {
-  spacesTables: ITable;
+  spacesTable: ITable;
 }
 
 export class SpacesLambda extends Stack {
@@ -21,13 +21,16 @@ export class SpacesLambda extends Stack {
       runtime: Runtime.NODEJS_18_X,
       handler: "handler",
       entry: join(__dirname, "..", "..", "services", "spaces", "handler.ts"),
+      environment: {
+        TABLE_NAME: props.spacesTable.tableName,
+      },
     });
 
     // Add policy to allow out
     spacesLambda.addToRolePolicy(
       new PolicyStatement({
         effect: Effect.ALLOW,
-        resources: [props.spacesTables.tableArn],
+        resources: [props.spacesTable.tableArn],
         actions: ["dynamodb:PutItem"],
       })
     );

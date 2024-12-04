@@ -7,6 +7,8 @@ export async function postSpaces(event: APIGatewayProxyEvent, ddbClient: DynamoD
   const item = JSON.parse(event.body);
 
   const command = new PutItemCommand({
+    // This process.env. is from
+    // src/infra/stacks/SpacesLambda.ts
     TableName: process.env.TABLE_NAME,
     Item: {
       id: {

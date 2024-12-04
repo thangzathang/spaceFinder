@@ -13,7 +13,7 @@ const lambdaStack = new LambdaStack(app, "LambdaStack", {
 });
 
 const spacesLambdaStack = new SpacesLambda(app, "SpacesLambdaStack", {
-  spacesTables: dataStack.spacesTable,
+  spacesTable: dataStack.spacesTable,
 });
 
 new ApiStack(app, "ApiStack", {
