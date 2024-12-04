@@ -9,11 +9,11 @@ const app = new App();
 const dataStack = new DataStack(app, "DataStack");
 
 const lambdaStack = new LambdaStack(app, "LambdaStack", {
-  spacesTable: dataStack.spacesTable.tableName,
+  spacesTable: dataStack.spacesTable,
 });
 
 const spacesLambdaStack = new SpacesLambda(app, "SpacesLambdaStack", {
-  spacesTables: dataStack.spacesTable.tableName,
+  spacesTables: dataStack.spacesTable,
 });
 
 new ApiStack(app, "ApiStack", {
