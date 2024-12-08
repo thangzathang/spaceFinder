@@ -1,6 +1,7 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from "aws-lambda";
-import { postSpaces } from "./PostSpaces";
+// import { postSpaces } from "./PostSpaces";
+import { postSpaces } from "./PostSpacesWithDocDB";
 import { getSpaces } from "./GetSpaces";
 
 // Init a new DyanamoDB client

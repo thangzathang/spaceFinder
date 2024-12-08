@@ -12,7 +12,7 @@ handler(
   {
     httpMethod: "POST",
     body: JSON.stringify({
-      location: "Tokyo",
+      location: "Darwin",
     }),
   } as any,
   {} as any
