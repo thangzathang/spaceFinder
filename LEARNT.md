@@ -50,3 +50,18 @@ You simply wrap the DynamoDB Client in DynamoBD Document Client: <br>
 `const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);`
 
 Then simply send the command like so: `await ddbDocClient.send(command)`
+
+# Lecture 45
+
+## Dynamodb update item command - why the expression syntax?
+
+Have a look at the syntax in the UpdateItemCommand, at src/services/spaces/UpdateSpace.ts.
+
+User must write an expression in the 'UpdateExpression' and then define the expression. Like so:
+`UpdateExpression: "set #newLoc = :newLocation"`
+
+The `#` symbol represents a placeholder for an attribute name
+
+The `:` symbol represents a placeholder for a value
+
+It seems very verbose so such a simple operation. The answer is that it is to help user deal with reserved words, special characters and SQL injection attacks.
