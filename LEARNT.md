@@ -38,6 +38,12 @@ Item: {
 
 ## Using DynamoDBDocument Client
 
+Comes from the `aws-sdk/lib-dynamodb`
+
+```
+import { UpdateCommand, DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
+```
+
 Example code at 'src/services/spaces/PostSpacesWithDocDB.ts'
 
 You simply wrap the DynamoDB Client in DynamoBD Document Client: <br>
