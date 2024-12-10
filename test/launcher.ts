@@ -70,7 +70,8 @@
   );
 */
 
-// 6. Test PUT /*
+// 6. Test PUT
+/*
 import { handler } from "../src/services/spaces/handler";
 process.env.TABLE_NAME = "SpaceTable-0aec7385babb";
 process.env.AWS_REGION = "eu-west-1";
@@ -84,6 +85,22 @@ handler(
     body: JSON.stringify({
       location: "New Paris",
     }),
+  } as any,
+  {} as any
+);
+*/
+
+// 7. Delete Command
+import { handler } from "../src/services/spaces/handler";
+process.env.TABLE_NAME = "SpaceTable-0aec7385babb";
+process.env.AWS_REGION = "eu-west-1";
+
+handler(
+  {
+    httpMethod: "DELETE",
+    queryStringParameters: {
+      id: "96be76d6-e438-4601-aef8-64cee2613b8d",
+    },
   } as any,
   {} as any
 );
