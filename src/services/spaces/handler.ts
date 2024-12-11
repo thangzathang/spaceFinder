@@ -5,7 +5,7 @@ import { postSpaces } from "./PostSpaces";
 import { getSpaces } from "./GetSpaces";
 import { updateSpace } from "./UpdateSpace";
 import { deleteSpace } from "./DeleteSpace";
-import { MissingFieldError } from "../shared/validator";
+import { MissingFieldError } from "../shared/Validator";
 
 // Init a new DynamoDB client
 const ddbClient = new DynamoDBClient({});
