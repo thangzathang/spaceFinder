@@ -16,5 +16,7 @@ export class ApiStack extends Stack {
     const resource = api.root.addResource(props.apiName);
     resource.addMethod("GET", props.lambdaIntegration);
     resource.addMethod("POST", props.lambdaIntegration);
+    resource.addMethod("PUT", props.lambdaIntegration);
+    resource.addMethod("DELETE", props.lambdaIntegration);
   }
 }
