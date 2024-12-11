@@ -7,6 +7,7 @@ import { validateAsSpaceEntry } from "../shared/Validator";
 export async function postSpaces(event: APIGatewayProxyEvent, ddbClient: DynamoDBClient): Promise<APIGatewayProxyResult> {
   const randomId = v4();
   const item = JSON.parse(event.body);
+  item.id = randomId;
 
   // Apply validation
   validateAsSpaceEntry(item);
@@ -26,10 +27,7 @@ export async function postSpaces(event: APIGatewayProxyEvent, ddbClient: DynamoD
     },
     */
     // If Marshalling
-    Item: marshall({
-      id: randomId,
-      ...item,
-    }),
+    Item: marshall(item),
   });
 
   const result = await ddbClient.send(command);
